@@ -1,0 +1,391 @@
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    margin: 0;
+
+}
+
+body{
+    font-family: sans-serif;
+    padding: 0;
+}
+
+.main{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.todo-accept-container, .sort-todo-card, .sort-todo-card{
+    width: 100%;
+}
+
+.sort-todo-card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.sort-option{
+    background-color: #FFFFFF;
+    color: black;
+    border-radius: 5px;
+}
+
+.todo-accept-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-accept{
+    width: 90%;
+    height: 50px;
+    padding: 5px;
+    border: 2px solid transparent;
+    border-bottom-color: rgb(61, 61, 61);
+    font-size: 20px;
+}
+
+.sort-para{
+    font-size: 20px;
+}
+
+.sorting-selector{
+    background-color:rgb(61, 61, 61) ;
+    color: #FFFFFF;
+    height: 60px;
+    padding: 10px;
+    width: 120px;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+select, input:focus{
+    outline: none;
+}
+
+.add-todo-button{
+    width: 7%;
+    background-color: rgb(61, 61, 61);
+    border-radius: 5px;
+    border: 0px;
+    font-size: 20px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.add-todo-button:hover{
+    color: #FFFFFF;
+    background-color:rgb(14, 0, 124);
+    
+}
+
+.todo-container{
+    width: 800px;
+    margin: 10px auto;
+}
+
+.list-todos{
+    min-height: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0px;
+    margin-top: 30px;
+}
+
+.list-element{
+    height: 80px;
+    width: 100%;
+    list-style-type: none;
+    border: 2px solid rgb(61, 61, 61);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 1s ease; 
+    
+}
+
+.list-element.todo-enter{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.list-element:hover{
+    transform: translate(0%, 10%);
+} 
+
+.input-check{
+    height: 30px;
+    width: 30px; 
+    cursor: pointer;
+    appearance: none;
+    border: 2px solid rgb(61, 61, 61);
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+.input-check:checked{
+    background-color: rgb(61, 61, 61);
+    color: #FFFFFF;
+}
+
+.input-check:checked::after{
+    content: "\2714";
+    color: #FFFFFF;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-text{
+    width: 80%;
+    height: 30px;
+    font-size: 30px;
+    color:rgb(61, 61, 61);
+    border: 0px;
+
+}
+
+.delete-button{
+    background-color: transparent;
+    border: 0px;
+    color: rgb(61, 61, 61);
+    height: 35px;
+    width: 35px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.delete-button i{
+    pointer-events: none;
+
+}
+
+.remaining-para, .quote{
+    color: rgb(61, 61, 61);
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.quote{
+    color: rgb(106, 105, 105);
+    font-weight: 500 !important;
+}
+
+li.checked{
+    text-decoration: line-through;
+}
+
+@media screen and (max-width:1440px) {
+    .todo-container{
+        width: 800px;
+    }
+
+    .input-accept{
+        width: 90%;
+        height: 50px;
+        padding: 5px;
+        font-size: 20px;
+    }
+
+    .sort-para{
+        font-size: 20px;
+    }
+
+    .sorting-selector{
+        padding: 10px;
+        width: 120px;
+        font-size: 20px;
+    }
+
+    .add-todo-button{
+        width: 7%;
+        border-radius: 5px;
+        font-size: 20px;
+    }
+
+    .list-element{
+        height: 80px;
+        border-radius: 25px;
+        gap: 20px;
+
+    }
+
+    .input-check{
+        height: 30px;
+        width: 30px;
+        
+    }
+
+    .input-text{
+        width: 80%;
+        height: 30px;
+        font-size: 30px;
+    }
+
+    .delete-button{
+        height: 35px;
+        width: 35px;
+        font-size: 20px;
+    }
+
+    .remaining-para, .quote{
+        font-size: 20px;
+
+    }
+
+}
+
+@media screen and (max-width:1024px){
+    .main{
+        padding: 35px;
+    }
+
+    .todo-container{
+        width: 600px;
+    }
+
+    .input-accept{
+        width: 90%;
+        height: 35px;
+        padding: 5px;
+        font-size: 17px;
+    }
+
+    .sort-para{
+        font-size: 17px;
+    }
+
+    .sorting-selector{
+        height: 40px;
+        padding: 10px;
+        width:120px;
+        font-size: 17px;
+    }
+
+    .add-todo-button{
+        width: 7%;
+        border-radius: 5px;
+        font-size: 17px;
+    }
+
+    .list-element{
+        height: 60px;
+        border-radius: 17px;
+        gap: 15px;
+    }
+
+    .input-check{
+        height: 24px;
+        width: 24px;
+        
+    }
+
+    .input-text{
+        width: 80%;
+        height: 25px;
+        font-size: 22px;
+
+    }
+
+    .delete-button{
+
+        height: 25px;
+        width: 25px;
+        font-size: 16px;
+    }
+
+    .remaining-para, .quote{
+        font-size: 17px;
+
+    }
+}
+
+@media screen and (max-width:690px){
+    .main{
+        padding: 20px;
+    }
+
+    .todo-container{
+        width: 90%;
+    }
+    .input-accept{
+        width: 90%;
+        height: 25px;
+        padding: 5px;
+        border: 2px solid transparent;
+        border-bottom-color: rgb(61, 61, 61);
+        font-size: 15px;
+    }
+
+    .sort-para{
+        font-size: 15px;
+    }
+
+    .sorting-selector{
+        height: 30px;
+        padding: 5px;
+        width:80px;
+        font-size: 12px;
+    }
+
+    .add-todo-button{
+        width: 7%;
+        border-radius: 5px;
+        font-size: 15px;
+    }
+
+    .list-element{
+        height: 40px;
+        border-radius: 15px;
+        gap: 10px;
+    }
+
+    .input-check{
+        height: 18px;
+        width: 18px;
+        
+    }
+
+    .input-text{
+        width: 80%;
+        height: 20px;
+        font-size: 15px;
+
+    }
+
+    .delete-button{
+        background-color: transparent;
+        border: 0px;
+        color: rgb(61, 61, 61);
+        height: 25px;
+        width: 25px;
+        font-size: 12px;
+    }
+
+    .remaining-para, .quote{
+        color: rgb(61, 61, 61);
+        font-size: 13px;
+        font-weight: bold;
+        font-style: italic;
+    }
+
+
+}

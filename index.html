@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+            <div class="todo-container">
+                <h1 class="todo-heading">Your To Do</h1>
+
+                <!-- filter section -->
+                <div class="sort-todo-card" >
+                    <p class="sort-para">Select filters :</p>
+                    <select id="sort-select" class="sorting-selector"> 
+                        <option class="sort-option" selected disabled>Sort by</option>
+                        <option id="sort-latest" class="sort-option" value="Latest">Latest</option>
+                        <option id="sort-oldest" class="sort-option" value="Oldest">Oldest</option>
+                        <option id="sort-A-Z" class="sort-option" value="A-Z">A-Z</option>
+                        <option id="sort-Z-A" class="sort-option" value="Z-A">Z-A</option>
+                    </select>
+                </div>
+
+
+                <!-- to accept a todo -->
+                <form class="todo-accept-container">
+                    <input type="text" id="todo-input-id" class="input-accept" placeholder="Add new task"/>
+                    <button id="add-todo-button-id" class="add-todo-button" type="submit">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </form>
+
+
+                <!-- To display todos -->
+                <ul id="todo-list-id" class="list-todos">
+                    <!-- <li class="list-element">
+                        <input class="input-check" type="checkbox"
+                         />
+
+                         <input class="input-text" type="text"
+                         />
+
+                         <button class="delete-button"> 
+                            <i class="fa-solid fa-x"></i>
+                         </button>
+                    </li>
+
+                    <li class="list-element" style="list-style-type: none;">
+                        <input checked class="input-check" type="checkbox"
+                         />
+
+                         <input class="input-text" type="text"
+                         />
+
+                         <button class="delete-button"> 
+                            <i class="fa-solid fa-x"></i>
+                         </button>
+                    </li>
+
+                    <li class="list-element" style="list-style-type: none;">
+                        <input class="input-check" type="checkbox"
+                         />
+
+                         <input class="input-text" type="text"
+                         />
+
+                         <button class="delete-button"> 
+                            <i class="fa-solid fa-x"></i>
+                         </button>
+                    </li>
+                    <li class="list-element" style="list-style-type: none;">
+                        <input class="input-check" type="checkbox"
+                         />
+
+                         <input class="input-text" type="text"
+                         />
+
+                         <button class="delete-button"> 
+                            <i class="fa-solid fa-x"></i>
+                         </button>
+                    </li>
+                    <li class="list-element" style="list-style-type: none;">
+                        <input class="input-check" type="checkbox"
+                         />
+
+                         <input class="input-text" type="text"
+                         />
+
+                         <button class="delete-button"> 
+                            <i class="fa-solid fa-x"></i>
+                         </button>
+                    </li>
+                    <li class="list-element" style="list-style-type: none;">
+                        <input class="input-check" type="checkbox"
+                         />
+
+                         <input class="input-text" type="text"
+                         />
+
+                         <button class="delete-button"> 
+                            <i class="fa-solid fa-x"></i>
+                         </button>
+                    </li> -->
+                </ul>
+
+
+                <!-- remaining and quote -->
+                <p class="remaining-para">Your remaining todos: <span id="todo-count-id" class="todo-count">0</span></p>
+                <p class="quote">
+                    "Doing what you love is the cornerstone of 
+                    having abundance in your life". - Wayne Dyer
+                </p>
+
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
