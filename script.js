@@ -6,8 +6,26 @@ const todoCountId=document.getElementById("todo-count-id")
 
 const sortByField=document.getElementById("sort-select")
 
+const todoStorageKey="Todo-storage-key"
+
 let todosArray=[]
 let todosCount=0
+
+const saveToLocalStorage=()=>{
+    localStorage.setItem(todoStorageKey, JSON.stringify(todosArray))
+}
+
+const getFromLocalStorage=()=>{
+    const arr=localStorage.getItem(todoStorageKey)
+
+    if (arr===null){
+        return []
+    }
+    return JSON.parse(arr).map(each=>({
+        ...each,
+        time:new Date(each.time)
+    }))
+}
 
 const todosCounter=()=>{
     counter=0
@@ -67,9 +85,9 @@ const AddToDoFunction=()=>{
         todoValue
     }
     todosArray.push(each)
-    console.log(todosArray)
     todoInputField.value=""
     createToDoItems(each)
+    saveToLocalStorage()
     todosCounter()
 
 }
@@ -105,6 +123,7 @@ todoListField.addEventListener("click", (event)=>{
         todoItemInArray.completed=!todoItemInArray.completed
         listItem.classList.toggle("checked", todoItemInArray.completed)
         listItem.querySelector(".input-text").disabled=todoItemInArray.completed
+        saveToLocalStorage()
 
     }
 
@@ -112,6 +131,7 @@ todoListField.addEventListener("click", (event)=>{
         const filteredArray=todosArray.filter(each=>each.todoId !== todoDataSetId)
         todosArray=filteredArray
         listItem.remove()
+        saveToLocalStorage()
     }
 
     todosCounter()
@@ -129,6 +149,7 @@ todoListField.addEventListener("keydown", (event)=>{
 
     const todoItemInArray=todosArray.find(each=>each.todoId===todoDataSetId)
     todoItemInArray.todoValue=todoInputItem.value.trim()
+    saveToLocalStorage()
     alert("Todo Updated Successfully")
 
 })
@@ -155,3 +176,11 @@ sortByField.addEventListener("change", ()=>{
     }
     createMultipleToDoItems(sortedArray)
 })
+
+const loadAtRender=getFromLocalStorage()
+
+if (loadAtRender.length>0){
+    todosArray=loadAtRender
+    createMultipleToDoItems(todosArray)
+    todosCounter()
+}
