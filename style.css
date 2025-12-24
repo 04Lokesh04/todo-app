@@ -157,8 +157,8 @@ select, input:focus{
 
 .input-text{
     width: 80%;
-    height: 30px;
-    font-size: 27px;
+    height: 34px;
+    font-size: 25px;
     color:rgb(61, 61, 61);
     border: 0px;
 
@@ -239,7 +239,7 @@ li.checked{
     .input-text{
         width: 80%;
         height: 30px;
-        font-size: 30px;
+        font-size: 25px;
     }
 
     .delete-button{
@@ -303,7 +303,7 @@ li.checked{
     .input-text{
         width: 80%;
         height: 25px;
-        font-size: 22px;
+        font-size: 20px;
 
     }
 
